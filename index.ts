@@ -1,24 +1,45 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
-
-const data = "./database/data.json";
+import cors from "cors";
+import {
+  getScoreBoard,
+  addScore,
+  RoundCondition,
+  Round,
+} from "./utils/index.js";
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
+app.use(express.json());
+
 const router = express.Router();
 
-router.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+app.get("/getScores", (req: Request, res: Response) => {
+  const scoreBoard = getScoreBoard();
+  // console.log({ scoreBoard });
+
+  res.json({ scoreBoard });
 });
 
-router.get("/getScores", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+app.post("/submitScore", (req: Request, res: Response) => {
+  const { deck, condition } = req.body as Round;
+
+  addScore({ deck, condition });
+  console.log(req.body);
+
+  res.json({ submitted: true });
 });
 
-router.post("/submitScore", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
 

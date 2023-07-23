@@ -1,0 +1,34 @@
+{
+  "rounds": [
+    {
+      "deck": [
+        {
+          "id": "deck:51,type:Clubs,face:10",
+          "cardType": "Clubs",
+          "face": "10"
+        },
+        {
+          "id": "deck:51,type:Hearts,face:K",
+          "cardType": "Hearts",
+          "face": "K"
+        }
+      ],
+      "condition": "PlayerWon"
+    },
+    {
+      "deck": [
+        {
+          "id": "deck:01,type:Spades,face:7",
+          "cardType": "Spades",
+          "face": "7"
+        },
+        {
+          "id": "deck:01,type:Spades,face:A",
+          "cardType": "Spades",
+          "face": "A"
+        }
+      ],
+      "condition": "Draw"
+    }
+  ]
+}
