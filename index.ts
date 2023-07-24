@@ -21,22 +21,21 @@ app.use(
 
 app.use(express.json());
 
-const router = express.Router();
-
 app.get("/getScores", (req: Request, res: Response) => {
   const scoreBoard = getScoreBoard();
-  // console.log({ scoreBoard });
 
   res.json({ scoreBoard });
 });
 
 app.post("/submitScore", (req: Request, res: Response) => {
-  const { deck, condition } = req.body as Round;
+  const { deck, condition, score } = req.body as Round;
 
-  addScore({ deck, condition });
+  // Validations may be added later
+
+  const newRounds = addScore({ deck, condition, score });
   console.log(req.body);
 
-  res.json({ submitted: true });
+  res.json({ scoreBoard: newRounds });
 });
 
 app.get("/", (req: Request, res: Response) => {

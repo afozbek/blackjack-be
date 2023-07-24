@@ -1,10 +1,9 @@
 import fs from "fs";
 
 export interface Round {
-  // Define the properties of your round object here
   condition: RoundCondition;
   deck: Deck;
-  // Add more properties as needed
+  score: number;
 }
 
 export enum RoundCondition {
@@ -66,6 +65,8 @@ const getScoreBoard = (): Round[] => {
 const addScore = (round: Round) => {
   database.rounds.push(round);
   saveDatabase(); // Save the database after adding a new round
+
+  return database.rounds;
 };
 
 // Example usage:

@@ -3,32 +3,34 @@
     {
       "deck": [
         {
-          "id": "deck:51,type:Clubs,face:10",
-          "cardType": "Clubs",
-          "face": "10"
+          "id": "deck:41,type:Spades,face:Q",
+          "cardType": "Spades",
+          "face": "Q"
         },
         {
-          "id": "deck:51,type:Hearts,face:K",
-          "cardType": "Hearts",
-          "face": "K"
+          "id": "deck:21,type:Diamonds,face:J",
+          "cardType": "Diamonds",
+          "face": "J"
         }
       ],
-      "condition": "PlayerWon"
+      "condition": "PlayerWon",
+      "score": 20
     },
     {
       "deck": [
         {
-          "id": "deck:01,type:Spades,face:7",
-          "cardType": "Spades",
-          "face": "7"
+          "id": "deck:21,type:Diamonds,face:9",
+          "cardType": "Diamonds",
+          "face": "9"
         },
         {
-          "id": "deck:01,type:Spades,face:A",
-          "cardType": "Spades",
-          "face": "A"
+          "id": "deck:21,type:Diamonds,face:K",
+          "cardType": "Diamonds",
+          "face": "K"
         }
       ],
-      "condition": "Draw"
+      "condition": "PlayerWon",
+      "score": 19
     }
   ]
 }
